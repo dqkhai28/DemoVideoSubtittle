@@ -1,0 +1,20 @@
+PODS:
+  - AVPlayerViewController-Subtitles (1.3.1)
+  - SnapKit (5.6.0)
+
+DEPENDENCIES:
+  - AVPlayerViewController-Subtitles
+  - SnapKit
+
+SPEC REPOS:
+  trunk:
+    - AVPlayerViewController-Subtitles
+    - SnapKit
+
+SPEC CHECKSUMS:
+  AVPlayerViewController-Subtitles: 34c89a7378e66bc113d1e77d1c199f6bc3b4e87e
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+
+PODFILE CHECKSUM: bda0193771298bce53f89046ad64c48b7d32eabb
+
+COCOAPODS: 1.12.1

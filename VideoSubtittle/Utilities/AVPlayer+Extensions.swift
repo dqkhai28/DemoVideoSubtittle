@@ -5,4 +5,10 @@
 //  Created by Kane on 05/09/2023.
 //
 
-import Foundation
+import AVKit
+
+extension AVPlayer {
+    var isPlaying: Bool {
+        return rate != 0 && error == nil
+    }
+}

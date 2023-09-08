@@ -1,0 +1,6 @@
+framework module Pods_VideoSubtittle {
+  umbrella header "Pods-VideoSubtittle-umbrella.h"
+
+  export *
+  module * { export * }
+}

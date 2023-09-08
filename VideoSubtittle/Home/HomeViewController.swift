@@ -26,4 +26,13 @@ class HomeViewController: UIViewController {
     }
     */
 
+    @IBAction func onTapDefaultPlayerButton(_ sender: UIButton) {
+        let defaultPlayerVC = VideoPlayerViewController()
+        self.navigationController?.pushViewController(defaultPlayerVC, animated: true)
+    }
+
+    @IBAction func onTapCustomPlayerButton(_ sender: UIButton) {
+        let defaultPlayerVC = CustomVideoPlayerViewController()
+        self.navigationController?.pushViewController(defaultPlayerVC, animated: true)
+    }
 }

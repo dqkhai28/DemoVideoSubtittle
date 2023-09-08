@@ -8,7 +8,13 @@
 import UIKit
 
 class CommentTableViewCell: UITableViewCell {
-
+    @IBOutlet private weak var avatarImageView: UIImageView!
+    @IBOutlet private weak var usernameLabel: UILabel!
+    @IBOutlet private weak var dateTimeLabel: UILabel!
+    @IBOutlet private weak var commentLabel: UILabel!
+    @IBOutlet private weak var reactionIconImageView: UIImageView!
+    @IBOutlet private weak var reactionCountLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
