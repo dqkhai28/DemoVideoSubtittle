@@ -7,7 +7,6 @@ target 'VideoSubtittle' do
 
   # Pods for VideoSubtittle
 
-  pod 'AVPlayerViewController-Subtitles'
   pod 'SnapKit'
 
 end

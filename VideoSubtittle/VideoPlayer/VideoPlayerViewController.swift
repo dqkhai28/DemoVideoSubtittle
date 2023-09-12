@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import AVPlayerViewControllerSubtitles
 import AVKit
 import SnapKit
 
