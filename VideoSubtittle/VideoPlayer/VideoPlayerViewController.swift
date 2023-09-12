@@ -11,7 +11,7 @@ import AVKit
 import SnapKit
 
 class VideoPlayerViewController: BaseViewController {
-    @IBOutlet private weak var playerView: UIView!
+    @IBOutlet private weak var playerView: CustomVideoPlayerView!
     @IBOutlet private weak var playerViewRightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var playerViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var commentView: UIView!
@@ -60,15 +60,11 @@ class VideoPlayerViewController: BaseViewController {
         self.setupUI()
         self.setupPlayer()
     }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.playVideo()
-    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
+        playerView.updateLayoutSubviews()
         guard let windowInterfaceOrientation = self.windowInterfaceOrientation else { return }
         if windowInterfaceOrientation.isPortrait, self.commentViewDefaultTopValue == 0 {
             self.commentViewDefaultTopValue = self.playerView.frame.maxY
@@ -95,33 +91,34 @@ class VideoPlayerViewController: BaseViewController {
             return
         }
         let subtitleURL = URL(fileURLWithPath: subtitleURLString)
-        self.player = AVPlayer(url: videoURL)
-        self.playerViewController = AVPlayerViewController()
+        playerView.playVideo(with: videoURL, subtitleURL: subtitleURL)
+        
+//        self.player = AVPlayer(url: videoURL)
+//        self.playerViewController = AVPlayerViewController()
 
-        playerViewController.player = self.player
-        playerViewController.view.frame = self.playerView.frame
-        playerViewController.showsPlaybackControls = true
-        playerViewController.player?.pause()
-
-        self.addChild(playerViewController)
-        self.playerView.addSubview(playerViewController.view)
-        self.playerViewController.view.snp.makeConstraints{ constrains in
-            constrains.edges.equalToSuperview()
-        }
-
-        playerViewController.addSubtitles()
-        do {
-            try playerViewController.open(fileFromLocal: subtitleURL, encoding: String.Encoding.utf8)
-        } catch {
-            print(error)
-        }
-
-        playerViewController.subtitleLabel?.textColor = UIColor.white
+//        playerViewController.player = self.player
+//        playerViewController.view.frame = self.playerView.frame
+//        playerViewController.player?.pause()
+//
+//        self.addChild(playerViewController)
+//        self.playerView.addSubview(playerViewController.view)
+//        self.playerViewController.view.snp.makeConstraints{ constrains in
+//            constrains.edges.equalToSuperview()
+//        }
+//
+//        playerViewController.addSubtitles()
+//        do {
+//            try playerViewController.open(fileFromLocal: subtitleURL, encoding: String.Encoding.utf8)
+//        } catch {
+//            print(error)
+//        }
+//
+//        playerViewController.subtitleLabel?.textColor = UIColor.white
     }
 
-    private func playVideo() {
-        playerViewController.player?.play()
-    }
+//    private func playVideo() {
+//        playerViewController.player?.play()
+//    }
     
     private func updatePlayerLayouts() {
         guard let windowInterfaceOrientation = self.windowInterfaceOrientation else { return }
@@ -138,16 +135,6 @@ class VideoPlayerViewController: BaseViewController {
             self.playerViewRightConstraint.constant = 0
             self.commentViewLeftConstraint.constant = 0
             self.commentViewTopConstraint.constant = self.commentViewDefaultTopValue
-        }
-    }
-    
-    private func showFullScreenPlayerIfNeeded() {
-        guard let windowInterfaceOrientation = self.windowInterfaceOrientation else { return }
-        
-        if windowInterfaceOrientation.isLandscape {
-//            self.commentViewLeftConstraint.constant = 0
-//            self.view.layoutIfNeeded()
-            self.playerViewController.goFullScreen()
         }
     }
 
@@ -167,7 +154,6 @@ class VideoPlayerViewController: BaseViewController {
             vc.onDismiss = { [weak self] in
                 guard let self = self else { return }
                 self.isShowingComment = false
-                self.showFullScreenPlayerIfNeeded()
             }
             self.addAndDisplayChildViewController(vc)
         }

@@ -7,14 +7,20 @@
 
 import UIKit
 import AVFoundation
+import AVPlayerViewControllerSubtitles
+import AVKit
+import SnapKit
 
 class CustomVideoPlayerView: UIView {
     @IBOutlet private weak var videoView: UIView!
     @IBOutlet private weak var controlView: PlayBackView!
-
+    @IBOutlet private weak var centerControlView: CenterPlayBackView!
+    
     private var player: AVPlayer!
     private var playerLayer: AVPlayerLayer!
+    private var playerViewController: AVPlayerViewController!
     private var isShowPlayBack = true
+    private var fadingTimer: Timer?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,16 +33,17 @@ class CustomVideoPlayerView: UIView {
         loadFromNib()
         config()
     }
+    
+    deinit {
+        self.fadingTimer?.invalidate()
+    }
 
-    func playVideo(with urlString: String) {
-        guard let url = URL(string: urlString) else { return }
-        let playerItem = AVPlayerItem(url: url)
+    func playVideo(with videURL: URL, subtitleURL: URL) {
+        let playerItem = AVPlayerItem(url: videURL)
         player?.replaceCurrentItem(with: playerItem)
         controlView.playVideo()
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.showHidePlayBackView()
-        }
+        
+        self.startFadingTimer()
     }
 
     func updateLayoutSubviews() {
@@ -44,11 +51,20 @@ class CustomVideoPlayerView: UIView {
         playerLayer.frame = videoView.bounds
     }
 
-    private func config() {
+    func config() {
         setupPlayer()
         controlView.config(with: player)
+        centerControlView.config(with: player)
         let controlTapGesture = UITapGestureRecognizer(target: self, action: #selector(playerViewHandleTap))
         self.addGestureRecognizer(controlTapGesture)
+        controlView.didTapInsideView = { [weak self] in
+            guard let self = self else { return }
+            self.startFadingTimer()
+        }
+        centerControlView.didTapInsideView = { [weak self] in
+            guard let self = self else { return }
+            self.startFadingTimer()
+        }
     }
 
     private func setupPlayer() {
@@ -60,28 +76,40 @@ class CustomVideoPlayerView: UIView {
     }
 
     @objc private func playerViewHandleTap(_ gestureRecognizer: UITapGestureRecognizer) {
-        let location = gestureRecognizer.location(in: self)
-        guard let contentView = self.getViewsByType(type: PlayBackView.self).first else { return }
-
-        if contentView.frame.contains(location) && isShowPlayBack {
-            return
+        if isShowPlayBack {
+            hidePlaybackViews()
+        } else {
+            showPlaybackViews()
         }
-
-        showHidePlayBackView()
     }
 }
 
 // MARK: - Show / Hide PlayBack
 private extension CustomVideoPlayerView {
-    func showHidePlayBackView() {
-        isShowPlayBack = !isShowPlayBack
+    private func startFadingTimer() {
+        self.fadingTimer?.invalidate()
+        self.fadingTimer = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { [weak self] _ in
+            guard let self = self else { return }
+            self.hidePlaybackViews()
+        }
+    }
+    
+    private func showPlaybackViews() {
+        isShowPlayBack = true
         UIView.animate(withDuration: 0.3, animations: { [weak self] in
             guard let self = self else { return }
-//            self.closeButton.alpha = !self.isShowPlayBack ? 0 : 1
-            self.controlView.alpha = !self.isShowPlayBack ? 0 : 1
+            self.controlView.alpha = 1
+            self.centerControlView.alpha = 1
         })
-//        if isShowPlayBack {
-//            resetTimer()
-//        }
+        self.startFadingTimer()
+    }
+    
+    private func hidePlaybackViews() {
+        self.isShowPlayBack = false
+        UIView.animate(withDuration: 0.3, animations: { [weak self] in
+            guard let self = self else { return }
+            self.controlView.alpha = 0
+            self.centerControlView.alpha = 0
+        })
     }
 }

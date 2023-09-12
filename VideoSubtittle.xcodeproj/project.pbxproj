@@ -19,8 +19,6 @@
 		3CFDB7F42AA6C86900203B63 /* VideoPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CFDB7F22AA6C86900203B63 /* VideoPlayerViewController.xib */; };
 		3CFDB7FD2AA700BC00203B63 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFDB7FB2AA700BC00203B63 /* HomeViewController.swift */; };
 		3CFDB7FE2AA700BC00203B63 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CFDB7FC2AA700BC00203B63 /* HomeViewController.xib */; };
-		3CFDB8022AA7040D00203B63 /* CustomVideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFDB8002AA7040D00203B63 /* CustomVideoPlayerViewController.swift */; };
-		3CFDB8032AA7040D00203B63 /* CustomVideoPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CFDB8012AA7040D00203B63 /* CustomVideoPlayerViewController.xib */; };
 		3CFDB8062AA706E800203B63 /* CustomVolumeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFDB8052AA706E800203B63 /* CustomVolumeView.swift */; };
 		3CFDB8092AA70C6700203B63 /* PlayBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFDB8082AA70C6700203B63 /* PlayBackView.swift */; };
 		3CFDB80B2AA70C7800203B63 /* PlayBackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CFDB80A2AA70C7800203B63 /* PlayBackView.xib */; };
@@ -36,6 +34,8 @@
 		703F8EE72AA969C70026E80B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703F8EE62AA969C70026E80B /* BaseViewController.swift */; };
 		703F8EE92AA98CDB0026E80B /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703F8EE82AA98CDB0026E80B /* UIApplication+Extensions.swift */; };
 		703F8EEB2AAAD9330026E80B /* AVPlayerViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703F8EEA2AAAD9330026E80B /* AVPlayerViewController+Extensions.swift */; };
+		70C5AE602AAEAF0000708C72 /* CenterPlayBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C5AE5F2AAEAF0000708C72 /* CenterPlayBackView.swift */; };
+		70C5AE622AAEAF1100708C72 /* CenterPlayBackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70C5AE612AAEAF1100708C72 /* CenterPlayBackView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,8 +54,6 @@
 		3CFDB7F22AA6C86900203B63 /* VideoPlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoPlayerViewController.xib; sourceTree = "<group>"; };
 		3CFDB7FB2AA700BC00203B63 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3CFDB7FC2AA700BC00203B63 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
-		3CFDB8002AA7040D00203B63 /* CustomVideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVideoPlayerViewController.swift; sourceTree = "<group>"; };
-		3CFDB8012AA7040D00203B63 /* CustomVideoPlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomVideoPlayerViewController.xib; sourceTree = "<group>"; };
 		3CFDB8052AA706E800203B63 /* CustomVolumeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVolumeView.swift; sourceTree = "<group>"; };
 		3CFDB8082AA70C6700203B63 /* PlayBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayBackView.swift; sourceTree = "<group>"; };
 		3CFDB80A2AA70C7800203B63 /* PlayBackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayBackView.xib; sourceTree = "<group>"; };
@@ -71,6 +69,8 @@
 		703F8EE62AA969C70026E80B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		703F8EE82AA98CDB0026E80B /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		703F8EEA2AAAD9330026E80B /* AVPlayerViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVPlayerViewController+Extensions.swift"; sourceTree = "<group>"; };
+		70C5AE5F2AAEAF0000708C72 /* CenterPlayBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterPlayBackView.swift; sourceTree = "<group>"; };
+		70C5AE612AAEAF1100708C72 /* CenterPlayBackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CenterPlayBackView.xib; sourceTree = "<group>"; };
 		99ADD2F15F918B13789BCB41 /* Pods-VideoSubtittle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoSubtittle.debug.xcconfig"; path = "Target Support Files/Pods-VideoSubtittle/Pods-VideoSubtittle.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,9 +165,8 @@
 			children = (
 				3CFDB8132AA71CA900203B63 /* CustomVideoPlayer */,
 				3CFDB8072AA70C4500203B63 /* PlayBackView */,
+				70C5AE5E2AAEAEB100708C72 /* CenterPlayBackView */,
 				3CFDB8042AA706A800203B63 /* VolumeView */,
-				3CFDB8002AA7040D00203B63 /* CustomVideoPlayerViewController.swift */,
-				3CFDB8012AA7040D00203B63 /* CustomVideoPlayerViewController.xib */,
 			);
 			path = CustomVideoPlayer;
 			sourceTree = "<group>";
@@ -227,6 +226,15 @@
 				3CFDB81F2AA8238100203B63 /* CommentTableViewCell.xib */,
 			);
 			path = CommentTableViewCell;
+			sourceTree = "<group>";
+		};
+		70C5AE5E2AAEAEB100708C72 /* CenterPlayBackView */ = {
+			isa = PBXGroup;
+			children = (
+				70C5AE5F2AAEAF0000708C72 /* CenterPlayBackView.swift */,
+				70C5AE612AAEAF1100708C72 /* CenterPlayBackView.xib */,
+			);
+			path = CenterPlayBackView;
 			sourceTree = "<group>";
 		};
 		A31AE0B056846CECD936336C /* Frameworks */ = {
@@ -307,7 +315,7 @@
 				3CFDB7EE2AA5CF3100203B63 /* trailer_720p.mov in Resources */,
 				3CFDB8212AA8238100203B63 /* CommentTableViewCell.xib in Resources */,
 				3CFDB7FE2AA700BC00203B63 /* HomeViewController.xib in Resources */,
-				3CFDB8032AA7040D00203B63 /* CustomVideoPlayerViewController.xib in Resources */,
+				70C5AE622AAEAF1100708C72 /* CenterPlayBackView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,10 +374,10 @@
 				3CFDB7F32AA6C86900203B63 /* VideoPlayerViewController.swift in Sources */,
 				3CFDB80E2AA711EB00203B63 /* UIView+Extensions.swift in Sources */,
 				703F8EE72AA969C70026E80B /* BaseViewController.swift in Sources */,
+				70C5AE602AAEAF0000708C72 /* CenterPlayBackView.swift in Sources */,
 				703F8EE92AA98CDB0026E80B /* UIApplication+Extensions.swift in Sources */,
 				3CFDB8152AA71D0000203B63 /* CustomVideoPlayerView.swift in Sources */,
 				3CFDB7D82AA5C89F00203B63 /* AppDelegate.swift in Sources */,
-				3CFDB8022AA7040D00203B63 /* CustomVideoPlayerViewController.swift in Sources */,
 				3CFDB8062AA706E800203B63 /* CustomVolumeView.swift in Sources */,
 				3CFDB7DA2AA5C89F00203B63 /* SceneDelegate.swift in Sources */,
 				3CFDB8102AA713A000203B63 /* CMTime+Extensions.swift in Sources */,
@@ -444,7 +452,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -498,7 +506,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -516,6 +524,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3X2GRWBCFP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VideoSubtittle/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -544,6 +553,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3X2GRWBCFP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VideoSubtittle/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
