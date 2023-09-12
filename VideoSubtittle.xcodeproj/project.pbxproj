@@ -164,7 +164,7 @@
 		3CFDB7FF2AA703ED00203B63 /* CustomVideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				3CFDB8132AA71CA900203B63 /* CustomVideoPlayer */,
+				3CFDB8132AA71CA900203B63 /* CustomVideoPlayerView */,
 				3CFDB8072AA70C4500203B63 /* PlayBackView */,
 				70C5AE5E2AAEAEB100708C72 /* CenterPlayBackView */,
 				3CFDB8042AA706A800203B63 /* VolumeView */,
@@ -203,13 +203,13 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		3CFDB8132AA71CA900203B63 /* CustomVideoPlayer */ = {
+		3CFDB8132AA71CA900203B63 /* CustomVideoPlayerView */ = {
 			isa = PBXGroup;
 			children = (
 				3CFDB8142AA71D0000203B63 /* CustomVideoPlayerView.swift */,
 				3CFDB8162AA71D1000203B63 /* CustomVideoPlayerView.xib */,
 			);
-			path = CustomVideoPlayer;
+			path = CustomVideoPlayerView;
 			sourceTree = "<group>";
 		};
 		3CFDB8182AA7310D00203B63 /* Comment */ = {

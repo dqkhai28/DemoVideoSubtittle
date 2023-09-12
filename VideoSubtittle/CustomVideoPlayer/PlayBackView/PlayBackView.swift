@@ -116,7 +116,7 @@ final class PlayBackView: UIView {
         if sender.isSelected {
             AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
         } else {
-            AppUtility.lockOrientation(.landscape, andRotateTo: .landscapeLeft)
+            AppUtility.lockOrientation(.landscapeLeft, andRotateTo: .landscapeLeft)
         }
         sender.isSelected.toggle()
         self.didTapInsideView?()
