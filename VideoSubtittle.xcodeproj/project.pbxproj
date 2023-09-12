@@ -36,6 +36,7 @@
 		703F8EEB2AAAD9330026E80B /* AVPlayerViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703F8EEA2AAAD9330026E80B /* AVPlayerViewController+Extensions.swift */; };
 		70C5AE602AAEAF0000708C72 /* CenterPlayBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C5AE5F2AAEAF0000708C72 /* CenterPlayBackView.swift */; };
 		70C5AE622AAEAF1100708C72 /* CenterPlayBackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70C5AE612AAEAF1100708C72 /* CenterPlayBackView.xib */; };
+		70C5AE652AB00D5D00708C72 /* Subtitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C5AE642AB00D5D00708C72 /* Subtitles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		703F8EEA2AAAD9330026E80B /* AVPlayerViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVPlayerViewController+Extensions.swift"; sourceTree = "<group>"; };
 		70C5AE5F2AAEAF0000708C72 /* CenterPlayBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterPlayBackView.swift; sourceTree = "<group>"; };
 		70C5AE612AAEAF1100708C72 /* CenterPlayBackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CenterPlayBackView.xib; sourceTree = "<group>"; };
+		70C5AE642AB00D5D00708C72 /* Subtitles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subtitles.swift; sourceTree = "<group>"; };
 		99ADD2F15F918B13789BCB41 /* Pods-VideoSubtittle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoSubtittle.debug.xcconfig"; path = "Target Support Files/Pods-VideoSubtittle/Pods-VideoSubtittle.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -191,6 +193,7 @@
 		3CFDB80C2AA711D500203B63 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				70C5AE632AB00D2D00708C72 /* Subttittle */,
 				3CFDB80D2AA711EB00203B63 /* UIView+Extensions.swift */,
 				3CFDB80F2AA713A000203B63 /* CMTime+Extensions.swift */,
 				3CFDB8112AA7191900203B63 /* AVPlayer+Extensions.swift */,
@@ -235,6 +238,14 @@
 				70C5AE612AAEAF1100708C72 /* CenterPlayBackView.xib */,
 			);
 			path = CenterPlayBackView;
+			sourceTree = "<group>";
+		};
+		70C5AE632AB00D2D00708C72 /* Subttittle */ = {
+			isa = PBXGroup;
+			children = (
+				70C5AE642AB00D5D00708C72 /* Subtitles.swift */,
+			);
+			path = Subttittle;
 			sourceTree = "<group>";
 		};
 		A31AE0B056846CECD936336C /* Frameworks */ = {
@@ -377,6 +388,7 @@
 				70C5AE602AAEAF0000708C72 /* CenterPlayBackView.swift in Sources */,
 				703F8EE92AA98CDB0026E80B /* UIApplication+Extensions.swift in Sources */,
 				3CFDB8152AA71D0000203B63 /* CustomVideoPlayerView.swift in Sources */,
+				70C5AE652AB00D5D00708C72 /* Subtitles.swift in Sources */,
 				3CFDB7D82AA5C89F00203B63 /* AppDelegate.swift in Sources */,
 				3CFDB8062AA706E800203B63 /* CustomVolumeView.swift in Sources */,
 				3CFDB7DA2AA5C89F00203B63 /* SceneDelegate.swift in Sources */,

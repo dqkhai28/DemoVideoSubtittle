@@ -18,8 +18,6 @@ class VideoPlayerViewController: BaseViewController {
     @IBOutlet private weak var commentViewTopConstraint: NSLayoutConstraint!
     @IBOutlet private weak var commentViewLeftConstraint: NSLayoutConstraint!
     
-    var player: AVPlayer!
-    var playerViewController: AVPlayerViewController!
     private var isShowingComment: Bool = false {
         didSet {
             self.updatePlayerLayouts()
@@ -92,45 +90,21 @@ class VideoPlayerViewController: BaseViewController {
         }
         let subtitleURL = URL(fileURLWithPath: subtitleURLString)
         playerView.playVideo(with: videoURL, subtitleURL: subtitleURL)
-        
-//        self.player = AVPlayer(url: videoURL)
-//        self.playerViewController = AVPlayerViewController()
-
-//        playerViewController.player = self.player
-//        playerViewController.view.frame = self.playerView.frame
-//        playerViewController.player?.pause()
-//
-//        self.addChild(playerViewController)
-//        self.playerView.addSubview(playerViewController.view)
-//        self.playerViewController.view.snp.makeConstraints{ constrains in
-//            constrains.edges.equalToSuperview()
-//        }
-//
-//        playerViewController.addSubtitles()
-//        do {
-//            try playerViewController.open(fileFromLocal: subtitleURL, encoding: String.Encoding.utf8)
-//        } catch {
-//            print(error)
-//        }
-//
-//        playerViewController.subtitleLabel?.textColor = UIColor.white
     }
-
-//    private func playVideo() {
-//        playerViewController.player?.play()
-//    }
     
     private func updatePlayerLayouts() {
         guard let windowInterfaceOrientation = self.windowInterfaceOrientation else { return }
         
         if windowInterfaceOrientation.isLandscape {
             // activate landscape changes
+            self.navigationController?.isNavigationBarHidden = true
             self.playerHeight = UIScreen.main.bounds.height
             self.playerViewRightConstraint.constant = self.isShowingComment ? Constant.horizontalCommentViewWidth : 0
             self.commentViewLeftConstraint.constant = Constant.commentViewLeftValue
             self.commentViewTopConstraint.constant =  0
         } else {
             // activate portrait changes
+            self.navigationController?.isNavigationBarHidden = false
             self.playerHeight = UIScreen.main.bounds.width / 2
             self.playerViewRightConstraint.constant = 0
             self.commentViewLeftConstraint.constant = 0
