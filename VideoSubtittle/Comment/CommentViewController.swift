@@ -94,6 +94,10 @@ class CommentViewController: BaseViewController {
     }
 
     @objc func handlePan(_ gesture: UIPanGestureRecognizer) {
+        guard let windowInterfaceOrientation = self.windowInterfaceOrientation,
+              windowInterfaceOrientation.isPortrait else {
+            return
+        }
         let translation = gesture.translation(in: view)
         switch gesture.state {
         case .began:
@@ -163,7 +167,7 @@ extension CommentViewController {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             UIView.animate(withDuration: Constants.dismissTimeout) {
-                self.contentViewTopConstraint.constant = UIScreen.main.bounds.height
+                self.contentViewTopConstraint.constant = self.contentView.frame.height - self.headerView.frame.height - 10
                 self.view.layoutIfNeeded()
             } completion: { isFinished in
                 self.onDismiss?()
@@ -175,7 +179,7 @@ extension CommentViewController {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             UIView.animate(withDuration: Constants.dismissTimeout) {
-                self.contentViewLeftConstraint.constant = self.contentView.frame.width
+                self.contentViewLeftConstraint.constant = self.contentView.frame.width - 80
                 self.view.layoutIfNeeded()
             } completion: { isFinished in
                 self.onDismiss?()

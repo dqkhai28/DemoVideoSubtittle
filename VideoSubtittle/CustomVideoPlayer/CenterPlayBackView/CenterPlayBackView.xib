@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CenterPlayBackView" customModule="VideoSubtittle" customModuleProvider="target">
+            <connections>
+                <outlet property="backwardButton" destination="SJs-mv-Q0W" id="gyw-09-7QR"/>
+                <outlet property="forwardButton" destination="il3-ce-MqH" id="pNR-Es-ZmT"/>
+                <outlet property="playPauseButton" destination="B5Q-Bo-OHw" id="Mq0-ly-KLS"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="173" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="1xC-eT-ln9">
+                    <rect key="frame" x="0.0" y="0.0" width="173" height="60"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9bZ-up-g0k" userLabel="Backward View">
+                            <rect key="frame" x="0.0" y="0.0" width="40" height="60"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJs-mv-Q0W">
+                                    <rect key="frame" x="0.0" y="10" width="40" height="40"/>
+                                    <color key="backgroundColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="SJs-mv-Q0W" secondAttribute="height" id="Bx2-LI-1vA"/>
+                                        <constraint firstAttribute="width" constant="40" id="z0X-La-7sX"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="ic-backward"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusView">
+                                            <real key="value" value="20"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="onTapBackwardButton:" destination="-1" eventType="touchUpInside" id="AHa-SQ-z50"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="SJs-mv-Q0W" secondAttribute="trailing" id="6NI-7O-ZsE"/>
+                                <constraint firstItem="SJs-mv-Q0W" firstAttribute="leading" secondItem="9bZ-up-g0k" secondAttribute="leading" id="A2U-8G-Eaw"/>
+                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="SJs-mv-Q0W" secondAttribute="bottom" constant="10" id="S36-u3-YZS"/>
+                                <constraint firstItem="SJs-mv-Q0W" firstAttribute="top" relation="greaterThanOrEqual" secondItem="9bZ-up-g0k" secondAttribute="top" constant="10" id="rfz-qZ-Um4"/>
+                                <constraint firstItem="SJs-mv-Q0W" firstAttribute="centerY" secondItem="9bZ-up-g0k" secondAttribute="centerY" id="v7C-gD-OrQ"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AEJ-1e-Zzr" userLabel="Play Pause View">
+                            <rect key="frame" x="56.666666666666657" y="0.0" width="60" height="60"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B5Q-Bo-OHw">
+                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                    <color key="backgroundColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="B5Q-Bo-OHw" secondAttribute="height" id="R0u-i7-WCM"/>
+                                        <constraint firstAttribute="width" constant="60" id="sWa-fP-Zwz"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="ic-play-large">
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusView">
+                                            <real key="value" value="30"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="onTapPlayPauseButton:" destination="-1" eventType="touchUpInside" id="VpR-y2-wyj"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="B5Q-Bo-OHw" secondAttribute="trailing" id="0ym-P8-IOj"/>
+                                <constraint firstItem="B5Q-Bo-OHw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="AEJ-1e-Zzr" secondAttribute="top" id="75Q-uo-peC"/>
+                                <constraint firstItem="B5Q-Bo-OHw" firstAttribute="centerY" secondItem="AEJ-1e-Zzr" secondAttribute="centerY" id="M3Y-V6-oO1"/>
+                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="B5Q-Bo-OHw" secondAttribute="bottom" id="Obh-dU-qYM"/>
+                                <constraint firstItem="B5Q-Bo-OHw" firstAttribute="leading" secondItem="AEJ-1e-Zzr" secondAttribute="leading" id="ZyR-SF-Fty"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uvl-VC-JUd" userLabel="Forward View">
+                            <rect key="frame" x="133" y="0.0" width="40" height="60"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="il3-ce-MqH">
+                                    <rect key="frame" x="0.0" y="10" width="40" height="40"/>
+                                    <color key="backgroundColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="40" id="KEL-lD-q5e"/>
+                                        <constraint firstAttribute="width" secondItem="il3-ce-MqH" secondAttribute="height" id="YDV-p7-uxg"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="ic-forward"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusView">
+                                            <real key="value" value="20"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="onTapForwardButton:" destination="-1" eventType="touchUpInside" id="1k7-Az-iQF"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="il3-ce-MqH" firstAttribute="centerY" secondItem="uvl-VC-JUd" secondAttribute="centerY" id="Pvw-uM-Obg"/>
+                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="il3-ce-MqH" secondAttribute="bottom" constant="10" id="aUS-oX-B59"/>
+                                <constraint firstAttribute="trailing" secondItem="il3-ce-MqH" secondAttribute="trailing" id="eLY-K3-37q"/>
+                                <constraint firstItem="il3-ce-MqH" firstAttribute="top" relation="greaterThanOrEqual" secondItem="uvl-VC-JUd" secondAttribute="top" constant="10" id="khC-Fb-BXe"/>
+                                <constraint firstItem="il3-ce-MqH" firstAttribute="leading" secondItem="uvl-VC-JUd" secondAttribute="leading" id="mh0-6M-oH6"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="1xC-eT-ln9" secondAttribute="trailing" id="CXk-JH-Wa2"/>
+                <constraint firstItem="1xC-eT-ln9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Z6p-7N-GMR"/>
+                <constraint firstAttribute="bottom" secondItem="1xC-eT-ln9" secondAttribute="bottom" id="ns6-Sj-QVh"/>
+                <constraint firstItem="1xC-eT-ln9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="zWO-gQ-kJ3"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-199.23664122137404" y="-268.3098591549296"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic-backward" width="16" height="9.3333330154418945"/>
+        <image name="ic-forward" width="16" height="9.3333330154418945"/>
+        <image name="ic-play-large" width="17.666666030883789" height="20"/>
+    </resources>
+</document>

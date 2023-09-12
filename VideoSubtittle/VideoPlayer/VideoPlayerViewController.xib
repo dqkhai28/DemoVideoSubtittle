@@ -12,7 +12,7 @@
                 <outlet property="commentView" destination="eQ6-g4-jC4" id="lYU-BE-CkE"/>
                 <outlet property="commentViewLeftConstraint" destination="rbd-Qo-2ey" id="iRt-bK-FRR"/>
                 <outlet property="commentViewTopConstraint" destination="3JB-Bb-x5w" id="IAK-D8-m7t"/>
-                <outlet property="playerView" destination="r33-eb-DiN" id="dib-ec-WSg"/>
+                <outlet property="playerView" destination="r33-eb-DiN" id="Ksg-bf-iVw"/>
                 <outlet property="playerViewHeightConstraint" destination="55P-sG-h2r" id="o5Y-24-2t3"/>
                 <outlet property="playerViewRightConstraint" destination="Ucf-aI-eps" id="Bhc-nN-Gq5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -23,7 +23,7 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r33-eb-DiN" userLabel="Player View">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r33-eb-DiN" userLabel="Player View" customClass="CustomVideoPlayerView" customModule="VideoSubtittle" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="59" width="393" height="196"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
