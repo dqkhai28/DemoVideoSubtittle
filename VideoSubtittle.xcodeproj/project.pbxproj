@@ -36,6 +36,7 @@
 		70C5AE602AAEAF0000708C72 /* CenterPlayBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C5AE5F2AAEAF0000708C72 /* CenterPlayBackView.swift */; };
 		70C5AE622AAEAF1100708C72 /* CenterPlayBackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70C5AE612AAEAF1100708C72 /* CenterPlayBackView.xib */; };
 		70C5AE652AB00D5D00708C72 /* Subtitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C5AE642AB00D5D00708C72 /* Subtitles.swift */; };
+		70C5AE672AB03E3700708C72 /* AppUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C5AE662AB03E3700708C72 /* AppUtility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		70C5AE5F2AAEAF0000708C72 /* CenterPlayBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterPlayBackView.swift; sourceTree = "<group>"; };
 		70C5AE612AAEAF1100708C72 /* CenterPlayBackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CenterPlayBackView.xib; sourceTree = "<group>"; };
 		70C5AE642AB00D5D00708C72 /* Subtitles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subtitles.swift; sourceTree = "<group>"; };
+		70C5AE662AB03E3700708C72 /* AppUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtility.swift; sourceTree = "<group>"; };
 		99ADD2F15F918B13789BCB41 /* Pods-VideoSubtittle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoSubtittle.debug.xcconfig"; path = "Target Support Files/Pods-VideoSubtittle/Pods-VideoSubtittle.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -196,6 +198,7 @@
 				3CFDB8112AA7191900203B63 /* AVPlayer+Extensions.swift */,
 				703F8EE82AA98CDB0026E80B /* UIApplication+Extensions.swift */,
 				703F8EEA2AAAD9330026E80B /* AVPlayerViewController+Extensions.swift */,
+				70C5AE662AB03E3700708C72 /* AppUtility.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 			files = (
 				3CFDB81B2AA7314300203B63 /* CommentViewController.swift in Sources */,
 				3CFDB7FD2AA700BC00203B63 /* HomeViewController.swift in Sources */,
+				70C5AE672AB03E3700708C72 /* AppUtility.swift in Sources */,
 				3CFDB7F32AA6C86900203B63 /* VideoPlayerViewController.swift in Sources */,
 				3CFDB80E2AA711EB00203B63 /* UIView+Extensions.swift in Sources */,
 				703F8EE72AA969C70026E80B /* BaseViewController.swift in Sources */,

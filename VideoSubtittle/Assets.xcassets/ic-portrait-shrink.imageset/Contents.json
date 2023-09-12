@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "rectangle.portrait.arrowtriangle.2.inward.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "rectangle.portrait.arrowtriangle.2.inward@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "rectangle.portrait.arrowtriangle.2.inward@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

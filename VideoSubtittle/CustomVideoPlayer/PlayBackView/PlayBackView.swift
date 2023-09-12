@@ -15,6 +15,7 @@ final class PlayBackView: UIView {
     @IBOutlet private weak var timeSlider: UISlider!
     @IBOutlet private weak var timeRemainingLabel: UILabel!
     @IBOutlet private weak var volumeViewWidthConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var expandShrinkButton: UIButton!
     
     private var player: AVPlayer?
     private var isVideoFinished: Bool = false
@@ -30,6 +31,8 @@ final class PlayBackView: UIView {
         static let icTrack = UIImage(named: "ic-track")
         static let icAudio = UIImage(named: "ic-audio")
         static let icNoAudio = UIImage(named: "ic-no-audio")
+        static let icExpand = UIImage(named: "ic-landscape-expand")
+        static let icShrink = UIImage(named: "ic-portrait-shrink")
         static let minWidthVolumeSlider: CGFloat = 0
         static let maxWidthVolumeSlider: CGFloat = 80
     }
@@ -106,6 +109,16 @@ final class PlayBackView: UIView {
                 playVideo()
             }
         }
+        self.didTapInsideView?()
+    }
+    
+    @IBAction func onTapExpandShrinkButton(_ sender: UIButton) {
+        if sender.isSelected {
+            AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
+        } else {
+            AppUtility.lockOrientation(.landscape, andRotateTo: .landscapeLeft)
+        }
+        sender.isSelected.toggle()
         self.didTapInsideView?()
     }
     

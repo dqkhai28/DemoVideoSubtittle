@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlayBackView" customModule="VideoSubtittle" customModuleProvider="target">
             <connections>
+                <outlet property="expandShrinkButton" destination="XDy-nt-JHf" id="u2r-Ch-7Yw"/>
                 <outlet property="playPauseButton" destination="lKC-Fl-NN7" id="fec-gm-3uN"/>
                 <outlet property="speakerButton" destination="3Hp-yc-DFO" id="ud6-7C-h5K"/>
                 <outlet property="timeRemainingLabel" destination="8ZU-OD-jZv" id="ZCV-l8-Mmf"/>
@@ -38,7 +39,7 @@
                                 <action selector="onTapPlayPauseButton:" destination="-1" eventType="touchUpInside" id="Tyn-7V-Igx"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Hp-yc-DFO">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Hp-yc-DFO" userLabel="Speaker Button">
                             <rect key="frame" x="26" y="0.0" width="20" height="60"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="20" id="aU4-KZ-W9p"/>
@@ -58,12 +59,12 @@
                             </constraints>
                         </view>
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="N4k-bk-m9Y">
-                            <rect key="frame" x="136" y="0.0" width="637" height="61"/>
+                            <rect key="frame" x="136" y="0.0" width="611" height="61"/>
                             <color key="minimumTrackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="maximumTrackTintColor" systemColor="systemGrayColor"/>
                         </slider>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--:--" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ZU-OD-jZv">
-                            <rect key="frame" x="777" y="0.0" width="50" height="60"/>
+                            <rect key="frame" x="751" y="0.0" width="50" height="60"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="50" id="R5N-KA-fMf"/>
                             </constraints>
@@ -71,6 +72,19 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDy-nt-JHf" userLabel="Expand Shrink Button">
+                            <rect key="frame" x="807" y="0.0" width="20" height="60"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="20" id="R9u-SB-jhn"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="ic-landscape-expand"/>
+                            <state key="selected" image="ic-portrait-shrink"/>
+                            <connections>
+                                <action selector="onTapExpandShrinkButton:" destination="-1" eventType="touchUpInside" id="UE5-gU-q5j"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </stackView>
@@ -87,6 +101,8 @@
         </view>
     </objects>
     <resources>
+        <image name="ic-landscape-expand" width="18.333333969116211" height="24.666666030883789"/>
+        <image name="ic-portrait-shrink" width="24" height="19"/>
         <image name="play.fill" catalog="system" width="117" height="128"/>
         <image name="volume.2.fill" catalog="system" width="128" height="88"/>
         <systemColor name="systemBackgroundColor">

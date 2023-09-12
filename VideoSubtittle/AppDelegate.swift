@@ -10,7 +10,7 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var orientationLock = UIInterfaceOrientationMask.portrait
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -31,6 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        return self.orientationLock
+    }
 }
 
