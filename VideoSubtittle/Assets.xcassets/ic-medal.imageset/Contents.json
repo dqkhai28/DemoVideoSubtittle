@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "rectangle.arrowtriangle.2.outward.png",
+      "filename" : "medal.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "rectangle.arrowtriangle.2.outward@2x.png",
+      "filename" : "medal@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "rectangle.arrowtriangle.2.outward@3x.png",
+      "filename" : "medal@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

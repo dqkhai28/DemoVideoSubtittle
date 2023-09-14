@@ -26,8 +26,6 @@
 		3CFDB8122AA7191900203B63 /* AVPlayer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFDB8112AA7191900203B63 /* AVPlayer+Extensions.swift */; };
 		3CFDB8152AA71D0000203B63 /* CustomVideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFDB8142AA71D0000203B63 /* CustomVideoPlayerView.swift */; };
 		3CFDB8172AA71D1000203B63 /* CustomVideoPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CFDB8162AA71D1000203B63 /* CustomVideoPlayerView.xib */; };
-		3CFDB81B2AA7314300203B63 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFDB8192AA7314300203B63 /* CommentViewController.swift */; };
-		3CFDB81C2AA7314300203B63 /* CommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CFDB81A2AA7314300203B63 /* CommentViewController.xib */; };
 		3CFDB8202AA8238100203B63 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFDB81E2AA8238100203B63 /* CommentTableViewCell.swift */; };
 		3CFDB8212AA8238100203B63 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CFDB81F2AA8238100203B63 /* CommentTableViewCell.xib */; };
 		703F8EE72AA969C70026E80B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703F8EE62AA969C70026E80B /* BaseViewController.swift */; };
@@ -37,6 +35,10 @@
 		70C5AE622AAEAF1100708C72 /* CenterPlayBackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70C5AE612AAEAF1100708C72 /* CenterPlayBackView.xib */; };
 		70C5AE652AB00D5D00708C72 /* Subtitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C5AE642AB00D5D00708C72 /* Subtitles.swift */; };
 		70C5AE672AB03E3700708C72 /* AppUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C5AE662AB03E3700708C72 /* AppUtility.swift */; };
+		70C5AE6A2AB1958A00708C72 /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C5AE692AB1958A00708C72 /* CommentView.swift */; };
+		70C5AE6C2AB1959E00708C72 /* CommentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70C5AE6B2AB1959E00708C72 /* CommentView.xib */; };
+		70C5AE702AB1AD0300708C72 /* PinnedCommentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C5AE6E2AB1AD0300708C72 /* PinnedCommentCollectionViewCell.swift */; };
+		70C5AE712AB1AD0300708C72 /* PinnedCommentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70C5AE6F2AB1AD0300708C72 /* PinnedCommentCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,8 +64,6 @@
 		3CFDB8112AA7191900203B63 /* AVPlayer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Extensions.swift"; sourceTree = "<group>"; };
 		3CFDB8142AA71D0000203B63 /* CustomVideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVideoPlayerView.swift; sourceTree = "<group>"; };
 		3CFDB8162AA71D1000203B63 /* CustomVideoPlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomVideoPlayerView.xib; sourceTree = "<group>"; };
-		3CFDB8192AA7314300203B63 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
-		3CFDB81A2AA7314300203B63 /* CommentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentViewController.xib; sourceTree = "<group>"; };
 		3CFDB81E2AA8238100203B63 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		3CFDB81F2AA8238100203B63 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		703F8EE62AA969C70026E80B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +73,10 @@
 		70C5AE612AAEAF1100708C72 /* CenterPlayBackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CenterPlayBackView.xib; sourceTree = "<group>"; };
 		70C5AE642AB00D5D00708C72 /* Subtitles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subtitles.swift; sourceTree = "<group>"; };
 		70C5AE662AB03E3700708C72 /* AppUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtility.swift; sourceTree = "<group>"; };
+		70C5AE692AB1958A00708C72 /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
+		70C5AE6B2AB1959E00708C72 /* CommentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentView.xib; sourceTree = "<group>"; };
+		70C5AE6E2AB1AD0300708C72 /* PinnedCommentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinnedCommentCollectionViewCell.swift; sourceTree = "<group>"; };
+		70C5AE6F2AB1AD0300708C72 /* PinnedCommentCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PinnedCommentCollectionViewCell.xib; sourceTree = "<group>"; };
 		99ADD2F15F918B13789BCB41 /* Pods-VideoSubtittle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoSubtittle.debug.xcconfig"; path = "Target Support Files/Pods-VideoSubtittle/Pods-VideoSubtittle.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,9 +124,7 @@
 			children = (
 				3CFDB80C2AA711D500203B63 /* Utilities */,
 				3CFDB7FA2AA700A000203B63 /* Home */,
-				3CFDB7FF2AA703ED00203B63 /* CustomVideoPlayer */,
 				3CFDB7F02AA6C84A00203B63 /* VideoPlayer */,
-				3CFDB8182AA7310D00203B63 /* Comment */,
 				3CFDB7EB2AA5CF0400203B63 /* Resources */,
 				3CFDB7D72AA5C89F00203B63 /* AppDelegate.swift */,
 				3CFDB7D92AA5C89F00203B63 /* SceneDelegate.swift */,
@@ -146,6 +148,8 @@
 		3CFDB7F02AA6C84A00203B63 /* VideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				3CFDB7FF2AA703ED00203B63 /* CustomVideoPlayer */,
+				3CFDB8182AA7310D00203B63 /* CommentView */,
 				3CFDB7F12AA6C86900203B63 /* VideoPlayerViewController.swift */,
 				3CFDB7F22AA6C86900203B63 /* VideoPlayerViewController.xib */,
 			);
@@ -212,14 +216,15 @@
 			path = CustomVideoPlayerView;
 			sourceTree = "<group>";
 		};
-		3CFDB8182AA7310D00203B63 /* Comment */ = {
+		3CFDB8182AA7310D00203B63 /* CommentView */ = {
 			isa = PBXGroup;
 			children = (
+				70C5AE6D2AB1A92F00708C72 /* PinnedCommentCollectionViewCell */,
 				3CFDB81D2AA8235E00203B63 /* CommentTableViewCell */,
-				3CFDB8192AA7314300203B63 /* CommentViewController.swift */,
-				3CFDB81A2AA7314300203B63 /* CommentViewController.xib */,
+				70C5AE692AB1958A00708C72 /* CommentView.swift */,
+				70C5AE6B2AB1959E00708C72 /* CommentView.xib */,
 			);
-			path = Comment;
+			path = CommentView;
 			sourceTree = "<group>";
 		};
 		3CFDB81D2AA8235E00203B63 /* CommentTableViewCell */ = {
@@ -246,6 +251,15 @@
 				70C5AE642AB00D5D00708C72 /* Subtitles.swift */,
 			);
 			path = Subttittle;
+			sourceTree = "<group>";
+		};
+		70C5AE6D2AB1A92F00708C72 /* PinnedCommentCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				70C5AE6E2AB1AD0300708C72 /* PinnedCommentCollectionViewCell.swift */,
+				70C5AE6F2AB1AD0300708C72 /* PinnedCommentCollectionViewCell.xib */,
+			);
+			path = PinnedCommentCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		A31AE0B056846CECD936336C /* Frameworks */ = {
@@ -318,14 +332,15 @@
 			files = (
 				3CFDB7EF2AA5CF3100203B63 /* trailer_720p.srt in Resources */,
 				3CFDB8172AA71D1000203B63 /* CustomVideoPlayerView.xib in Resources */,
-				3CFDB81C2AA7314300203B63 /* CommentViewController.xib in Resources */,
 				3CFDB7F42AA6C86900203B63 /* VideoPlayerViewController.xib in Resources */,
 				3CFDB7E42AA5C8A100203B63 /* LaunchScreen.storyboard in Resources */,
 				3CFDB80B2AA70C7800203B63 /* PlayBackView.xib in Resources */,
 				3CFDB7E12AA5C8A100203B63 /* Assets.xcassets in Resources */,
 				3CFDB7EE2AA5CF3100203B63 /* trailer_720p.mov in Resources */,
 				3CFDB8212AA8238100203B63 /* CommentTableViewCell.xib in Resources */,
+				70C5AE712AB1AD0300708C72 /* PinnedCommentCollectionViewCell.xib in Resources */,
 				3CFDB7FE2AA700BC00203B63 /* HomeViewController.xib in Resources */,
+				70C5AE6C2AB1959E00708C72 /* CommentView.xib in Resources */,
 				70C5AE622AAEAF1100708C72 /* CenterPlayBackView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,13 +394,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CFDB81B2AA7314300203B63 /* CommentViewController.swift in Sources */,
+				70C5AE6A2AB1958A00708C72 /* CommentView.swift in Sources */,
 				3CFDB7FD2AA700BC00203B63 /* HomeViewController.swift in Sources */,
 				70C5AE672AB03E3700708C72 /* AppUtility.swift in Sources */,
 				3CFDB7F32AA6C86900203B63 /* VideoPlayerViewController.swift in Sources */,
 				3CFDB80E2AA711EB00203B63 /* UIView+Extensions.swift in Sources */,
 				703F8EE72AA969C70026E80B /* BaseViewController.swift in Sources */,
 				70C5AE602AAEAF0000708C72 /* CenterPlayBackView.swift in Sources */,
+				70C5AE702AB1AD0300708C72 /* PinnedCommentCollectionViewCell.swift in Sources */,
 				703F8EE92AA98CDB0026E80B /* UIApplication+Extensions.swift in Sources */,
 				3CFDB8152AA71D0000203B63 /* CustomVideoPlayerView.swift in Sources */,
 				70C5AE652AB00D5D00708C72 /* Subtitles.swift in Sources */,

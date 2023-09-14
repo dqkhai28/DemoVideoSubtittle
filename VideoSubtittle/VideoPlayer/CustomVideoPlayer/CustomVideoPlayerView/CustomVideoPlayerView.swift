@@ -14,12 +14,16 @@ class CustomVideoPlayerView: UIView {
     @IBOutlet private weak var videoView: UIView!
     @IBOutlet private weak var controlView: PlayBackView!
     @IBOutlet private weak var centerControlView: CenterPlayBackView!
+    @IBOutlet private weak var utilityStackView: UIStackView!
+    @IBOutlet private weak var messageButton: UIButton!
     
     private var player: AVPlayer!
     private var playerLayer: AVPlayerLayer!
     private var playerViewController: AVPlayerViewController!
     private var isShowPlayBack = true
     private var fadingTimer: Timer?
+    
+    var onTapShowHideComment: (() -> Void)?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -71,6 +75,10 @@ class CustomVideoPlayerView: UIView {
             self.startFadingTimer()
         }
     }
+    
+    func hideMessageButtonIfNeeded(isHidden: Bool) {
+        self.messageButton.isHidden = isHidden
+    }
 
     private func setupPlayer() {
         self.player = AVPlayer()
@@ -87,6 +95,15 @@ class CustomVideoPlayerView: UIView {
         } else {
             showPlaybackViews()
         }
+    }
+    
+    @IBAction func onTapMessageButton(_ sender: UIButton) {
+        self.onTapShowHideComment?()
+        self.startFadingTimer()
+    }
+    
+    @IBAction func onTapSubtitleButton(_ sender: UIButton) {
+        self.startFadingTimer()
     }
 }
 
@@ -106,6 +123,7 @@ private extension CustomVideoPlayerView {
             guard let self = self else { return }
             self.controlView.alpha = 1
             self.centerControlView.alpha = 1
+            self.utilityStackView.alpha = 1
         })
         self.startFadingTimer()
     }
@@ -116,6 +134,7 @@ private extension CustomVideoPlayerView {
             guard let self = self else { return }
             self.controlView.alpha = 0
             self.centerControlView.alpha = 0
+            self.utilityStackView.alpha = 0
         })
     }
 }

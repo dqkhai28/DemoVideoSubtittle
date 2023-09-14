@@ -31,8 +31,8 @@ final class PlayBackView: UIView {
         static let icTrack = UIImage(named: "ic-track")
         static let icAudio = UIImage(named: "ic-audio")
         static let icNoAudio = UIImage(named: "ic-no-audio")
-        static let icExpand = UIImage(named: "ic-landscape-expand")
-        static let icShrink = UIImage(named: "ic-portrait-shrink")
+        static let icExpand = UIImage(named: "ic-expand")
+        static let icShrink = UIImage(named: "ic-shrink")
         static let minWidthVolumeSlider: CGFloat = 0
         static let maxWidthVolumeSlider: CGFloat = 80
     }
@@ -67,6 +67,8 @@ final class PlayBackView: UIView {
             guard let self = self else { return }
             self.didTapInsideView?()
         }
+        expandShrinkButton.setImage(Constant.icExpand, for: .normal)
+        expandShrinkButton.setImage(Constant.icShrink, for: .selected)
     }
     
     @objc private func timeSliderValueChanged(_ sender: UISlider, event: UIEvent) {
@@ -116,7 +118,7 @@ final class PlayBackView: UIView {
         if sender.isSelected {
             AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
         } else {
-            AppUtility.lockOrientation(.landscapeLeft, andRotateTo: .landscapeLeft)
+            AppUtility.lockOrientation(.landscapeRight, andRotateTo: .landscapeRight)
         }
         sender.isSelected.toggle()
         self.didTapInsideView?()

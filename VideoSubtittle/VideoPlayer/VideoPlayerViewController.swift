@@ -13,14 +13,14 @@ class VideoPlayerViewController: BaseViewController {
     @IBOutlet private weak var playerView: CustomVideoPlayerView!
     @IBOutlet private weak var playerViewRightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var playerViewHeightConstraint: NSLayoutConstraint!
-    @IBOutlet private weak var commentView: UIView!
+    @IBOutlet private weak var commentView: CommentView!
     @IBOutlet private weak var commentViewTopConstraint: NSLayoutConstraint!
-    @IBOutlet private weak var commentViewLeftConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var commentViewWidthConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var commentViewRightConstraint: NSLayoutConstraint!
     
-    private var isShowingComment: Bool = false {
+    private var isShowingComment: Bool = true {
         didSet {
             self.updatePlayerLayouts()
-            self.commentView.isHidden = !isShowingComment
         }
     }
     private var playerHeight: CGFloat = 0 {
@@ -34,21 +34,16 @@ class VideoPlayerViewController: BaseViewController {
         }
     }
     
-    private struct Constant {
+    private struct Constants {
         static var horizontalCommentViewWidth: CGFloat {
             if UIScreen.main.bounds.width < UIScreen.main.bounds.height {
-                return (UIScreen.main.bounds.height * 2) / 5 - (2 * UIApplication.safeAreaLeftInset())
+                return UIScreen.main.bounds.height / 3
             } else {
-                return (UIScreen.main.bounds.width * 2) / 5 - (2 * UIApplication.safeAreaLeftInset())
+                return UIScreen.main.bounds.width / 3
             }
         }
-        static var commentViewLeftValue: CGFloat {
-            if UIScreen.main.bounds.width < UIScreen.main.bounds.height {
-                return (UIScreen.main.bounds.height * 3) / 5
-            } else {
-                return (UIScreen.main.bounds.width * 3) / 5
-            }
-        }
+        static let presentTimeout: TimeInterval = 0.3
+        static let dismissTimeout: TimeInterval = 0.3
     }
 
     override func viewDidLoad() {
@@ -56,6 +51,7 @@ class VideoPlayerViewController: BaseViewController {
 
         self.setupUI()
         self.setupPlayer()
+        self.updateCommentView()
     }
     
     override func viewDidLayoutSubviews() {
@@ -73,12 +69,33 @@ class VideoPlayerViewController: BaseViewController {
         
         coordinator.animate(alongsideTransition: { (context) in
             self.updatePlayerLayouts()
+            self.updateCommentView()
         })
     }
     
     private func setupUI() {
         self.updatePlayerLayouts()
-        
+        self.commentView.onTapDismiss = { [weak self] in
+            guard let self = self else { return }
+            
+            self.dismissCommentView()
+        }
+        self.playerView.onTapShowHideComment = { [weak self] in
+            guard let self = self,
+                  let windowInterfaceOrientation = self.windowInterfaceOrientation else {
+                return
+            }
+            
+            if windowInterfaceOrientation == .portrait {
+                return
+            } else {
+                if self.isShowingComment {
+                    self.dismissCommentView()
+                } else {
+                    self.showCommentView()
+                }
+            }
+        }
     }
 
     private func setupPlayer() {
@@ -98,56 +115,49 @@ class VideoPlayerViewController: BaseViewController {
             // activate landscape changes
             self.navigationController?.isNavigationBarHidden = true
             self.playerHeight = UIScreen.main.bounds.height
-            self.playerViewRightConstraint.constant = self.isShowingComment ? Constant.horizontalCommentViewWidth : 0
-            self.commentViewLeftConstraint.constant = Constant.commentViewLeftValue
+            self.playerViewRightConstraint.constant = self.isShowingComment ? Constants.horizontalCommentViewWidth : 0
+            self.commentViewWidthConstraint.constant = Constants.horizontalCommentViewWidth
             self.commentViewTopConstraint.constant =  0
+            self.commentViewRightConstraint.constant = self.isShowingComment ? 0 : -Constants.horizontalCommentViewWidth
         } else {
             // activate portrait changes
             self.navigationController?.isNavigationBarHidden = false
             self.playerHeight = UIScreen.main.bounds.width / 2
             self.playerViewRightConstraint.constant = 0
-            self.commentViewLeftConstraint.constant = 0
+            self.commentViewWidthConstraint.constant = UIScreen.main.bounds.width
             self.commentViewTopConstraint.constant = self.commentViewDefaultTopValue
+            self.commentViewRightConstraint.constant = 0
         }
-    }
-
-    @IBAction func onTapShowCommentsButton(_ sender: UIButton) {
-        self.showComment()
     }
     
-    func showComment() {
-        self.isShowingComment = true
-        
-        if let commentVC = self.children.first(where: { $0 is CommentViewController }) as? CommentViewController {
-            commentVC.verticalPresent()
-        } else {
-            let vc = CommentViewController()
-            vc.modalPresentationStyle = .overFullScreen
-            vc.topConstraintValue = 0
-            vc.onDismiss = { [weak self] in
-                guard let self = self else { return }
-                self.isShowingComment = false
-            }
-            self.addAndDisplayChildViewController(vc)
-        }
+    private func updateCommentView() {
+        guard let windowInterfaceOrientation = self.windowInterfaceOrientation else { return }
+        self.commentView.updateUI(in: windowInterfaceOrientation)
+        self.playerView.hideMessageButtonIfNeeded(isHidden: windowInterfaceOrientation == .portrait)
     }
 }
 
+// MARK: - Handle show/hide comment view
 extension VideoPlayerViewController {
-    fileprivate func addAndDisplayChildViewController(_ childViewController: UIViewController) {
-        childViewController.view.translatesAutoresizingMaskIntoConstraints = false
-        commentView.addSubview(childViewController.view)
-        childViewController.view.snp.makeConstraints { constraints in
-            constraints.edges.equalToSuperview()
+    private func showCommentView() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.isShowingComment = true
+            UIView.animate(withDuration: Constants.dismissTimeout) {
+                self.commentViewRightConstraint.constant = 0
+                self.view.layoutIfNeeded()
+            }
         }
-        
-        childViewController.willMove(toParent: self)
-        addChild(childViewController)
     }
     
-    fileprivate func removeAndDismissChildViewController(_ childViewController: UIViewController) {
-        childViewController.view.removeFromSuperview()
-        childViewController.willMove(toParent: nil)
-        childViewController.removeFromParent()
+    private func dismissCommentView() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.isShowingComment = false
+            UIView.animate(withDuration: Constants.dismissTimeout) {
+                self.commentViewRightConstraint.constant = -Constants.horizontalCommentViewWidth
+                self.view.layoutIfNeeded()
+            }
+        }
     }
 }

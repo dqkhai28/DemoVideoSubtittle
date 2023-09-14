@@ -34,7 +34,7 @@
                             </constraints>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" image="play.fill" catalog="system"/>
+                            <state key="normal" image="ic-play"/>
                             <connections>
                                 <action selector="onTapPlayPauseButton:" destination="-1" eventType="touchUpInside" id="Tyn-7V-Igx"/>
                             </connections>
@@ -46,7 +46,7 @@
                             </constraints>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" image="volume.2.fill" catalog="system"/>
+                            <state key="normal" image="ic-audio"/>
                             <connections>
                                 <action selector="onTapSpeakerButton:" destination="-1" eventType="touchUpInside" id="78s-S9-fon"/>
                             </connections>
@@ -79,8 +79,8 @@
                                 <constraint firstAttribute="width" constant="20" id="R9u-SB-jhn"/>
                             </constraints>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" image="ic-landscape-expand"/>
-                            <state key="selected" image="ic-portrait-shrink"/>
+                            <state key="normal" image="ic-expand"/>
+                            <state key="selected" image="ic-shrink"/>
                             <connections>
                                 <action selector="onTapExpandShrinkButton:" destination="-1" eventType="touchUpInside" id="UE5-gU-q5j"/>
                             </connections>
@@ -101,10 +101,10 @@
         </view>
     </objects>
     <resources>
-        <image name="ic-landscape-expand" width="18.333333969116211" height="24.666666030883789"/>
-        <image name="ic-portrait-shrink" width="24" height="19"/>
-        <image name="play.fill" catalog="system" width="117" height="128"/>
-        <image name="volume.2.fill" catalog="system" width="128" height="88"/>
+        <image name="ic-audio" width="15.666666984558105" height="11.333333015441895"/>
+        <image name="ic-expand" width="11.333333015441895" height="11.333333015441895"/>
+        <image name="ic-play" width="9" height="10"/>
+        <image name="ic-shrink" width="11.666666984558105" height="11.333333015441895"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
