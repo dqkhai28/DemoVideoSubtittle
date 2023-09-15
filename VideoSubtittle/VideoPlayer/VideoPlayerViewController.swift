@@ -52,6 +52,7 @@ class VideoPlayerViewController: BaseViewController {
         self.setupUI()
         self.setupPlayer()
         self.updateCommentView()
+        self.updateSubtitleFontSize()
     }
     
     override func viewDidLayoutSubviews() {
@@ -70,6 +71,7 @@ class VideoPlayerViewController: BaseViewController {
         coordinator.animate(alongsideTransition: { (context) in
             self.updatePlayerLayouts()
             self.updateCommentView()
+            self.updateSubtitleFontSize()
         })
     }
     
@@ -134,6 +136,11 @@ class VideoPlayerViewController: BaseViewController {
         guard let windowInterfaceOrientation = self.windowInterfaceOrientation else { return }
         self.commentView.updateUI(in: windowInterfaceOrientation)
         self.playerView.hideMessageButtonIfNeeded(isHidden: windowInterfaceOrientation == .portrait)
+    }
+    
+    private func updateSubtitleFontSize() {
+        guard let windowInterfaceOrientation = self.windowInterfaceOrientation else { return }
+        self.playerView.updateSubFontSize(orientation: windowInterfaceOrientation)
     }
 }
 

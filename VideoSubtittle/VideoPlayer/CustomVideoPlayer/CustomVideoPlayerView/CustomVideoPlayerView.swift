@@ -79,6 +79,15 @@ class CustomVideoPlayerView: UIView {
     func hideMessageButtonIfNeeded(isHidden: Bool) {
         self.messageButton.isHidden = isHidden
     }
+    
+    func updateSubFontSize(orientation: UIInterfaceOrientation) {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return
+        } else {
+            let fontSize: CGFloat = orientation == .portrait ? 16 : 22
+            self.subtitleLabel?.font = UIFont.boldSystemFont(ofSize: fontSize)
+        }
+    }
 
     private func setupPlayer() {
         self.player = AVPlayer()
